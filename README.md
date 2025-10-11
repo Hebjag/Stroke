@@ -1,3 +1,3 @@
 # Stroke
-Stroke calculators
-Alberta score
+Stroke calculators 
+(Alberta score)
