@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stroke ASPECTS Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>ASPECTS Stroke Score Calculator</h1>
+    <form method="post">
+        <fieldset>
+            <legend>Select affected regions (each reduces score by 1):</legend>
+            {% for region in regions %}
+                <div>
+                    <input type="checkbox" name="regions" value="{{ region }}" id="{{ region }}" {% if region in selected %}checked{% endif %}>
+                    <label for="{{ region }}">{{ region }}</label>
+                </div>
+            {% endfor %}
+        </fieldset>
+        <button type="submit">Calculate</button>
+    </form>
+    <h2>ASPECTS Score: {{ score }}</h2>
+</body>
+</html>
